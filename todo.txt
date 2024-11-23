@@ -1,0 +1,39 @@
+TO DO
+
+- [x] Set up basic launch
+- [] Find Movie DB and do basic imports
+- [] Set up redux
+- [] Set up basic auth
+
+- [] - Rig up routing for: 
+    - [] homepage 
+    - [] Top nav with search
+    - [] Profile page
+    - [] Individual series search 
+
+- [ ] HOMEPAGE COMPONENTS: 
+    - [] search functions
+    - [] List of rated movies
+    - [] List of latest tv shows
+        - [] Intuit contents via rating
+
+- [ ] PROFILE PAGE 
+    - Name, description, account age etc
+    - List of reviews
+
+- [ ] FILM SELECT PAGE 
+    - [] Route by ID
+    - [] Show latest reviews
+    - [] Show general consensus review weighing
+    - [] Film synopsis
+    - [] AU classification rating
+
+- [] Set up MySQL DB with ratings (ID, userId, SeriesID, Rating (float) )
+
+
+
+#1E2738 - Primary color, reminiscent of a dark theater
+#F5F5F7 - Background color, easy on the eyes
+#FFD700 - Accent color for ratings/stars, like theater lights
+#FFFFFF - For text and UI elements
+#4A314D - Secondary color for headers/sections
