@@ -2,8 +2,7 @@ TO DO
 
 - [x] Set up basic launch
 - [x] Find Movie DB and do basic imports
-- [ ] Set up Zustand
-- [] Launch on vercel 
+- [x] Launch on vercel 
 - [] Set up redux/zustand for state
 - [] Set up basic auth
 

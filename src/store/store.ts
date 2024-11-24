@@ -5,8 +5,14 @@ interface TV_Show_Review {
     review_score: number
 }
 
+interface Tv_Show_Preview {
+    name: string
+    poster_url: string
+
+}
+
 const useStore = create((set) => ({
     tv_show_names: [],
     tv_show_reviews: [],
-    add_tv_show_review: (tv_show_review: TV_Show_Review) => set((state) => ({ tv_show_reviews: [...state.tv_show_reviews, tv_show_review] })),
+    // add_tv_show_review: (tv_show_review: TV_Show_Review) => set((state) => ({ tv_show_reviews: [...state.tv_show_reviews, tv_show_review] })),
 }))
