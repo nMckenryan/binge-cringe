@@ -1,8 +1,10 @@
 TO DO
 
 - [x] Set up basic launch
-- [] Find Movie DB and do basic imports
-- [] Set up redux
+- [x] Find Movie DB and do basic imports
+- [ ] Set up Zustand
+- [] Launch on vercel 
+- [] Set up redux/zustand for state
 - [] Set up basic auth
 
 - [] - Rig up routing for: 
@@ -30,10 +32,3 @@ TO DO
 
 - [] Set up MySQL DB with ratings (ID, userId, SeriesID, Rating (float) )
 
-
-
-#1E2738 - Primary color, reminiscent of a dark theater
-#F5F5F7 - Background color, easy on the eyes
-#FFD700 - Accent color for ratings/stars, like theater lights
-#FFFFFF - For text and UI elements
-#4A314D - Secondary color for headers/sections

@@ -1,17 +1,18 @@
 "use client";
 import { useEffect, useState } from "react";
+import UICard from "./components/UICard";
 
 export default function HomePage() {
-  const [allMovies, setAllMovies] = useState<MovieData[]>([]);
+  const [allTVShows, setAllTVShows] = useState<TVShowData[]>([]);
 
   interface Result {
     page: number;
-    results: MovieData[];
+    results: TVShowData[];
     total_pages: number;
     total_results: number;
   }
 
-  interface MovieData {
+  interface TVShowData {
     adult: boolean;
     backdrop_path: string;
     genre_ids: number[];
@@ -29,29 +30,41 @@ export default function HomePage() {
   }
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`,
-        );
-        const data = (await response.json()) as Result;
-
-        const movies = data.results;
-
-        setAllMovies(movies);
-
-        console.log(data);
-      } catch (error) {
-        console.error("Error fetching movies:", error);
-      }
-    };
-
-    void fetchData();
+    fetch(
+      "https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc",
+      options,
+    )
+      .then((res) => res.json() as Promise<Result>)
+      .then((res) => setAllTVShows(res.results))
+      .catch((err) => console.error(err));
   }, []);
 
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_KEY}`,
+    },
+  };
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div>Welcome to bingecringe</div>
+    <main className="bg-background-black flex min-h-screen flex-col items-center justify-center text-white">
+      <div className="flex flex-col gap-1">
+        <UICard>
+          <h2 className="card-title">Welcome to bingecringe</h2>
+          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <div className="card-actions justify-end">
+            <button className="btn">Buy Now</button>
+          </div>
+        </UICard>
+        <UICard>
+          <h2 className="card-title">Welcome to bingecringe</h2>
+          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <div className="card-actions justify-end">
+            <button className="btn">Buy Now</button>
+          </div>
+        </UICard>
+      </div>
     </main>
   );
 }
