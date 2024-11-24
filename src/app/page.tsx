@@ -1,6 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 import UICard from "./components/UICard";
+import EmblaCarousel from "./components/Embla-Carousel";
+
+import "../styles/embla.css";
 
 export default function HomePage() {
   const [allTVShows, setAllTVShows] = useState<TVShowData[]>([]);
@@ -47,9 +50,12 @@ export default function HomePage() {
     },
   };
 
+  const SLIDE_COUNT = 5;
+  const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
+
   return (
     <main className="bg-background-black flex min-h-screen flex-col items-center justify-center text-white">
-      <div className="flex flex-col gap-1">
+      {/* <div className="flex flex-col gap-1">
         <UICard>
           <h2 className="card-title">Welcome to bingecringe</h2>
           <p>If a dog chews shoes whose shoes does he choose?</p>
@@ -57,14 +63,8 @@ export default function HomePage() {
             <button className="btn">Buy Now</button>
           </div>
         </UICard>
-        <UICard>
-          <h2 className="card-title">Welcome to bingecringe</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions justify-end">
-            <button className="btn">Buy Now</button>
-          </div>
-        </UICard>
-      </div>
+      </div> */}
+      <EmblaCarousel slides={SLIDES} />
     </main>
   );
 }
