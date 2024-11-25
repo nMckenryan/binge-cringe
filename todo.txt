@@ -3,8 +3,10 @@ TO DO
 - [x] Set up basic launch
 - [x] Find Movie DB and do basic imports
 - [x] Launch on vercel 
-- [] Set up redux/zustand for state
+- [x] Set up redux/zustand for state
 - [] Set up basic auth
+- [] Set up DB 
+- [] seed with TVDB details
 
 - [] - Rig up routing for: 
     - [] homepage 
@@ -12,10 +14,10 @@ TO DO
     - [] Profile page
     - [] Individual series search 
 
+
 - [ ] HOMEPAGE COMPONENTS: 
     - [] search functions
-    - [] List of rated movies
-    - [] List of latest tv shows
+    - [x] List of latest tv shows
         - [] Intuit contents via rating
 
 - [ ] PROFILE PAGE 
