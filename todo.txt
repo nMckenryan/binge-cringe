@@ -1,12 +1,43 @@
-TO DO
+TO DO MVP
 
 - [x] Set up basic launch
 - [x] Find Movie DB and do basic imports
 - [x] Launch on vercel 
-- [x] Set up redux/zustand for state
+- [x] Set up zustand for state
+- [] Load TV show details 
 - [] Set up basic auth
+
 - [] Set up DB 
 - [] seed with TVDB details
+
+
+MYSQL
+
+TABLE TV_SHOWS
+tvdb_id: number
+tv_show_name: string
+description: string
+content_rating: string
+aggregate_cringe_rating: number
+number_of_reviews: number
+first_air_date: Date
+final_air_date: Date | null
+series_status: string
+poster_link: string | null
+genre: string
+original_country: string 
+
+
+TABLE REVIEWS: 
+tvdb_id: number
+cringe_rating: number 
+member_id: number 
+review_content: string 
+date_reviewed: date
+
+
+
+- [] Fix carousel so it works under mobile
 
 - [] - Rig up routing for: 
     - [] homepage 
