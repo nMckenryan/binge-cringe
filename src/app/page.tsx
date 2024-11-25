@@ -1,58 +1,9 @@
 "use client";
-import { useEffect, useState } from "react";
 import UICard from "./components/UICard";
 import EmblaCarousel from "./components/Embla-Carousel";
-
 import "../styles/embla.css";
 
 export default function HomePage() {
-  const [allTVShows, setAllTVShows] = useState<TVShowData[]>([]);
-
-  interface Result {
-    page: number;
-    results: TVShowData[];
-    total_pages: number;
-    total_results: number;
-  }
-
-  interface TVShowData {
-    adult: boolean;
-    backdrop_path: string;
-    genre_ids: number[];
-    id: number;
-    original_language: string;
-    original_title: string;
-    overview: string;
-    popularity: number;
-    poster_path: string;
-    release_date: string;
-    title: string;
-    video: boolean;
-    vote_average: number;
-    vote_count: number;
-  }
-
-  useEffect(() => {
-    fetch(
-      "https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc",
-      options,
-    )
-      .then((res) => res.json() as Promise<Result>)
-      .then((res) => setAllTVShows(res.results))
-      .catch((err) => console.error(err));
-  }, []);
-
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_KEY}`,
-    },
-  };
-
-  const SLIDE_COUNT = 5;
-  const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-background-black text-white">
       <div className="flex flex-col gap-1">
@@ -64,7 +15,7 @@ export default function HomePage() {
           </div>
         </UICard>
         <UICard>
-          <EmblaCarousel slides={SLIDES} />
+          <EmblaCarousel />
         </UICard>
       </div>
     </main>
