@@ -54,8 +54,8 @@ export default function HomePage() {
   const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
   return (
-    <main className="bg-background-black flex min-h-screen flex-col items-center justify-center text-white">
-      {/* <div className="flex flex-col gap-1">
+    <main className="flex min-h-screen flex-col items-center justify-center bg-background-black text-white">
+      <div className="flex flex-col gap-1">
         <UICard>
           <h2 className="card-title">Welcome to bingecringe</h2>
           <p>If a dog chews shoes whose shoes does he choose?</p>
@@ -63,8 +63,10 @@ export default function HomePage() {
             <button className="btn">Buy Now</button>
           </div>
         </UICard>
-      </div> */}
-      <EmblaCarousel slides={SLIDES} />
+        <UICard>
+          <EmblaCarousel slides={SLIDES} />
+        </UICard>
+      </div>
     </main>
   );
 }

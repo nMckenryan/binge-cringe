@@ -1,21 +1,18 @@
 import React from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 
 type PropType = {
   slides: number[];
 };
 
-const EmblaCarousel: React.FC<PropType> = (props) => {
-  const { slides } = props;
-  const OPTIONS: EmblaOptionsType = { dragFree: true, loop: true };
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    OPTIONS,
-    // , [Autoplay()]
-  );
+export default function EmblaCarousel({ slides }: PropType) {
+  const options: EmblaOptionsType = { dragFree: true, loop: true };
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
 
   return (
-    <section className="embla">
+    <div className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((index) => (
@@ -25,8 +22,6 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
-};
-
-export default EmblaCarousel;
+}
